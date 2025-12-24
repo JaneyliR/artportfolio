@@ -1,0 +1,166 @@
+.books-section {
+  padding: 6rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: var(--background);
+  transition: background 0.3s ease;
+}
+
+[data-theme='light'] .books-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+}
+
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.book-card {
+  display: flex;
+  gap: 2rem;
+  background: rgba(26, 26, 46, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(74, 144, 226, 0.1);
+  transition: all 0.3s ease;
+}
+
+[data-theme='light'] .book-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(74, 144, 226, 0.3);
+  box-shadow: 0 20px 60px rgba(74, 144, 226, 0.2);
+}
+
+.book-cover {
+  position: relative;
+  flex: 0 0 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.book-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover .book-cover img {
+  transform: scale(1.05);
+}
+
+.book-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #4A90E2, #9B6BE8);
+  padding: 0.5rem 1rem;
+  border-bottom-left-radius: 8px;
+}
+
+.book-year {
+  color: white;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+}
+
+.book-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.book-role {
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.book-title {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--text-primary);
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+}
+
+.book-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.amazon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #4A90E2, #9B6BE8);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.amazon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.4);
+  color: white;
+}
+
+.amazon-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.amazon-btn:hover svg {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 1024px) {
+  .books-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .books-section {
+    padding: 4rem 1rem;
+  }
+
+  .book-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .book-cover {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .book-title {
+    font-size: 1.5rem;
+  }
+}

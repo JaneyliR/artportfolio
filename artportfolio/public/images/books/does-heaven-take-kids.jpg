@@ -1,0 +1,12 @@
+<svg width="400" height="600" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="600" fill="#4A90E2"/>
+  <text x="200" y="280" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">
+    Does Heaven Take
+  </text>
+  <text x="200" y="310" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">
+    Kids Like Us?
+  </text>
+  <text x="200" y="350" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" opacity="0.8">
+    Place book cover here
+  </text>
+</svg>
