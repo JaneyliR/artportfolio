@@ -15,8 +15,8 @@ export default function Books() {
     {
       id: 1,
       title: 'Does Heaven Take Kids Like Us?',
-      coverImage: '/images/doesheaventakekids.jpeg',
-      description: 'A heartwarming story that explores faith and belonging through the eyes of children. Published December 11, 2025.',
+      coverImage: '/images/books/doesheaventakekids.jpeg',
+      description: 'A heartwarming story that explores faith and belonging through the eyes of children sent to Heaven. Before they can go, the four teens must face one impossible question: If your life flashed before your eyes… would you like what you saw? Published December 11, 2025.',
       role: 'Illustrated & Authored',
       year: '2025',
       link: 'https://a.co/d/3FEFmd2'
@@ -24,8 +24,8 @@ export default function Books() {
     {
       id: 2,
       title: 'Mystery Overboard',
-      coverImage: '/images/mysteryoverboard.png',
-      description: 'An exciting mystery adventure that will keep young readers on the edge of their seats. Published May 6, 2025.',
+      coverImage: '../images/books/mysteryoverboard.png',
+      description: 'A summer vacation gone wrong. A boat full of suspects. One kid caught in the middle. Published May 6, 2025.',
       role: 'Illustrated & Authored',
       year: '2025',
       link: 'https://a.co/d/hqNC1Dd'
