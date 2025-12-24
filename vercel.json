@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd artportfolio && npm install && npm run build",
+  "outputDirectory": "artportfolio/dist",
+  "installCommand": "cd artportfolio && npm install",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
