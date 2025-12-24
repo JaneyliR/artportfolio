@@ -23,45 +23,73 @@ export default function Gallery({ artistName, artistEmail }: GalleryProps) {
   const galleryItems: GalleryItem[] = [
     {
       id: 1,
-      src: '/images/gallery/placeholder1.jpg',
-      title: 'Biblical Character Design',
-      description: 'Faith-inspired character illustration',
-      tags: ['biblical', 'character', 'faith']
+      src: '/images/gallery/blindingLights.png',
+      title: 'Blinding Lights',
+      description: 'Illustration inspired by the song "Blinding Lights"',
+      tags: ['music', 'illustration', 'character']
     },
     {
       id: 2,
-      src: '/images/gallery/placeholder2.jpg',
-      title: 'David and Goliath',
+      src: '/images/gallery/babyJesusIllustration.png',
+      title: 'Baby Jesus',
       description: 'Classic biblical story reimagined',
-      tags: ['biblical', 'classic', 'character']
+      tags: ['biblical', 'classic', 'character', 'jesus']
     },
     {
       id: 3,
-      src: '/images/gallery/placeholder3.jpg',
-      title: 'Noah\'s Ark',
-      description: 'Children\'s book illustration',
-      tags: ['biblical', 'children', 'illustration']
-    },
-    {
-      id: 4,
-      src: '/images/gallery/placeholder4.jpg',
-      title: 'Angel Design',
-      description: 'Heavenly messenger character concept',
-      tags: ['biblical', 'angel', 'character']
-    },
-    {
-      id: 5,
-      src: '/images/gallery/placeholder5.jpg',
-      title: 'Moses Character',
-      description: 'Biblical hero character design',
+      src: '/images/gallery/Esther.png',
+      title: 'Esther Character',
+      description: 'Biblical hero character design, fully rendered illustration',
       tags: ['biblical', 'character', 'hero']
     },
     {
+      id: 4,
+      src: '/images/gallery/Jesus.jpeg',
+      title: 'Jesus Character Design',
+      description: 'Illustration of Jesus Christ, inspired by biblical descriptions',
+      tags: ['biblical', 'jesus', 'character']
+    },
+    {
+      id: 5,
+      src: '/images/gallery/michalexpressionsheet.png',
+      title: 'Michal Expression Sheet',
+      description: 'Michal, daughter of King Saul, expression sheet for character design. Will be used in an upcoming project',
+      tags: ['biblical', 'expression', 'character']
+    },
+    {
       id: 6,
-      src: '/images/gallery/placeholder6.jpg',
-      title: 'Children of Faith',
-      description: 'Young believers character lineup',
-      tags: ['biblical', 'children', 'character']
+      src: '/images/gallery/DAVID.png',
+      title: 'David Character Design',
+      description: 'Illustration of David, inspired by biblical descriptions',
+      tags: ['biblical', 'david', 'character']
+    },
+    {
+      id: 7,
+      src: '/images/gallery/davidchibi.png',
+      title: 'Chibi David',
+      description: 'Chibi style illustration of David from the Bible',
+      tags: ['david', 'character', 'biblical']
+    },
+    {
+      id: 8,
+      src: '/images/gallery/coldoutside.png',
+      title: 'Winter\'s Air',
+      description: 'Children\'s book illustration that will be featured in a upcoming book in the future',
+      tags: ['winter', 'children', 'illustration']
+    },
+    {
+      id: 9,
+      src: '/images/gallery/CosmicPulse.png',
+      title: 'Hero Design',
+      description: 'Superhero character design with cosmic powers, will be used in a future storyline',
+      tags: ['superhero', 'design', 'character']
+    },
+    {
+      id: 10,
+      src: '/images/gallery/aeren.PNG',
+      title: 'Fantasy Character Design',
+      description: 'Merman inspired character illustration',
+      tags: ['fantasy', 'character', 'underwater']
     },
   ];
 
@@ -94,7 +122,7 @@ export default function Gallery({ artistName, artistEmail }: GalleryProps) {
   return (
     <section id="gallery" className="gallery-section">
       <div className="section-header">
-        <h2 className="section-title">Character Design</h2>
+        <h2 className="section-title">Character Design & Illustrations</h2>
         <p className="section-subtitle">Explore my character artwork and designs</p>
       </div>
 
