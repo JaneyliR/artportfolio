@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import Gallery from './components/Gallery'
@@ -25,6 +26,7 @@ function App() {
       <Gallery artistName={artistName} artistEmail={artistEmail} />
       <Books />
       <Contact artistName={artistName} artistEmail={artistEmail} />
+      <Analytics />
     </div>
   )
 }

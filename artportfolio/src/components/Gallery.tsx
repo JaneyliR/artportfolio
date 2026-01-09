@@ -19,7 +19,6 @@ export default function Gallery({ artistName, artistEmail }: GalleryProps) {
   const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
-  // Sample gallery items - replace with your actual artwork from public/images/gallery/
   const galleryItems: GalleryItem[] = [
     {
       id: 1,
@@ -33,7 +32,7 @@ export default function Gallery({ artistName, artistEmail }: GalleryProps) {
       src: '/images/gallery/babyJesusIllustration.png',
       title: 'Baby Jesus',
       description: 'Classic biblical story reimagined',
-      tags: ['biblical', 'classic', 'character', 'jesus']
+      tags: ['biblical', 'character', 'jesus']
     },
     {
       id: 3,
@@ -61,7 +60,7 @@ export default function Gallery({ artistName, artistEmail }: GalleryProps) {
       src: '/images/gallery/DAVID.png',
       title: 'David Character Design',
       description: 'Illustration of David, inspired by biblical descriptions',
-      tags: ['biblical', 'david', 'character']
+      tags: ['biblical', 'david', 'hero', 'character']
     },
     {
       id: 7,
@@ -74,7 +73,7 @@ export default function Gallery({ artistName, artistEmail }: GalleryProps) {
       id: 8,
       src: '/images/gallery/coldoutside.png',
       title: 'Winter\'s Air',
-      description: 'Children\'s book illustration that will be featured in a upcoming book in the future',
+      description: 'Children\'s book illustration that will be featured in a upcoming book',
       tags: ['winter', 'children', 'illustration']
     },
     {
