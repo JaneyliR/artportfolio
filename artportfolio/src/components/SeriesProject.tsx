@@ -49,7 +49,7 @@ export default function SeriesProject({ artistName, artistEmail }: SeriesProject
   const mainCharacterImages: CharacterImage[] = [
     {
       label: 'Final Character Illustration',
-      src: '/images/gallery/Esther.png',
+      src: '/images/gallery/Camila.png',
       alt: 'Final character illustration of Camila Rojas'
     },
     {
