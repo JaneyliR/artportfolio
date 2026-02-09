@@ -1,0 +1,106 @@
+.company-section {
+  padding: 6rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: var(--background);
+  transition: background 0.3s ease;
+}
+
+[data-theme='light'] .company-section {
+  background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+}
+
+.company-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.company-card {
+  background: rgba(26, 26, 46, 0.5);
+  border: 1px solid rgba(74, 144, 226, 0.2);
+  border-radius: 18px;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+[data-theme='light'] .company-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.company-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(74, 144, 226, 0.3);
+  box-shadow: 0 18px 40px rgba(74, 144, 226, 0.2);
+}
+
+.company-media {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.company-media img {
+  width: 100%;
+  border-radius: 16px;
+  background: rgba(10, 10, 20, 0.6);
+  padding: 1.2rem;
+  border: 1px solid rgba(74, 144, 226, 0.2);
+  object-fit: contain;
+}
+
+[data-theme='light'] .company-media img {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.company-text {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.company-label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+}
+
+.company-name {
+  font-size: 2rem;
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  color: var(--text-primary);
+}
+
+.company-role {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.company-description {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .company-section {
+    padding: 4rem 1rem;
+  }
+
+  .company-card {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+}

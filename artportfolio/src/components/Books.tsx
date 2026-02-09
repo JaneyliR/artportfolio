@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './Books.css';
 
 interface Book {
@@ -7,28 +8,47 @@ interface Book {
   description: string;
   role: string;
   year: string;
+  blurCover?: boolean;
   link?: string;
+  artwork?: { src: string; alt: string }[];
 }
 
 export default function Books() {
+  const [activeArtwork, setActiveArtwork] = useState<Book['artwork'] | null>(null);
+
   const books: Book[] = [
     {
       id: 1,
       title: 'Does Heaven Take Kids Like Us?',
       coverImage: '/images/books/doesheaventakekids.jpeg',
-      description: 'A heartwarming story that explores faith and belonging through the eyes of children sent to Heaven. Before they can go, the four teens must face one impossible question: If your life flashed before your eyes… would you like what you saw? Published December 11, 2025.',
+      description: 'A heartwarming story that explores faith and belonging through the eyes of teens. Published December 11, 2025.',
       role: 'Illustrated & Authored',
       year: '2025',
-      link: 'https://a.co/d/3FEFmd2'
+      link: 'https://a.co/d/3FEFmd2',
+      artwork: [
+        { src: '/images/gallery/Renata.png', alt: 'Renata character artwork' },
+        { src: '/images/gallery/Tomas.png', alt: 'Tomas character artwork' },
+        { src: '/images/gallery/Adanna.png', alt: 'Adanna character artwork' },
+        { src: '/images/gallery/Elias.png', alt: 'Elias character artwork' }
+      ]
     },
     {
       id: 2,
       title: 'Mystery Overboard',
-      coverImage: '../images/books/mysteryoverboard.png',
+      coverImage: '/images/books/mysteryoverboard.png',
       description: 'A summer vacation gone wrong. A boat full of suspects. One kid caught in the middle. Published May 6, 2025.',
       role: 'Illustrated & Authored',
       year: '2025',
       link: 'https://a.co/d/hqNC1Dd'
+    },
+    {
+      id: 3,
+      title: 'Overnight Sensation',
+      coverImage: '/images/books/Progress.png',
+      description: 'A boy who feels invisible wishes to be seen, and one night his wish comes true as he becomes an overnight sensation. Upcoming September 2026.',
+      role: 'Upcoming Release',
+      year: 'Sept. 2026',
+      blurCover: true
     },
   ];
 
@@ -43,7 +63,11 @@ export default function Books() {
         {books.map(book => (
           <div key={book.id} className="book-card">
             <div className="book-cover">
-              <img src={book.coverImage} alt={book.title} />
+              <img
+                src={book.coverImage}
+                alt={book.title}
+                className={book.blurCover ? 'book-cover-blur' : undefined}
+              />
               <div className="book-overlay">
                 <span className="book-year">{book.year}</span>
               </div>
@@ -52,6 +76,15 @@ export default function Books() {
               <span className="book-role">{book.role}</span>
               <h3 className="book-title">{book.title}</h3>
               <p className="book-description">{book.description}</p>
+              {book.artwork && (
+                <button
+                  type="button"
+                  className="book-art-btn"
+                  onClick={() => setActiveArtwork(book.artwork ?? null)}
+                >
+                  View Character Art
+                </button>
+              )}
               {book.link && (
                 <a 
                   href={book.link} 
@@ -69,6 +102,30 @@ export default function Books() {
           </div>
         ))}
       </div>
+
+      {activeArtwork && (
+        <div className="book-art-modal" onClick={() => setActiveArtwork(null)}>
+          <div className="book-art-content" onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              className="book-art-close"
+              onClick={() => setActiveArtwork(null)}
+              aria-label="Close character art"
+            >
+              ×
+            </button>
+            <h3>Character Artwork</h3>
+            <div className="book-art-grid">
+              {activeArtwork.map((art) => (
+                <div key={art.src} className="book-art-card">
+                  <img src={art.src} alt={art.alt} loading="lazy" />
+                  <p>{art.alt}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

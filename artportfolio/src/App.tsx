@@ -3,6 +3,8 @@ import { Analytics } from '@vercel/analytics/react'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import Gallery from './components/Gallery'
+import SeriesProject from './components/SeriesProject'
+import CompanySpot from './components/CompanySpot'
 import Books from './components/Books'
 import Contact from './components/Contact'
 import './App.css'
@@ -23,8 +25,10 @@ function App() {
     <div className="app">
       <Navigation artistName={artistName} theme={theme} onToggleTheme={toggleTheme} />
       <Hero artistName={artistName} />
-      <Gallery artistName={artistName} artistEmail={artistEmail} />
+      <SeriesProject />
+      <CompanySpot />
       <Books />
+      <Gallery artistName={artistName} artistEmail={artistEmail} />
       <Contact artistName={artistName} artistEmail={artistEmail} />
       <Analytics />
     </div>

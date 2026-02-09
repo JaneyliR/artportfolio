@@ -32,8 +32,10 @@ export default function Navigation({ artistName, theme, onToggleTheme }: Navigat
       <div className="nav-content">
         <div className="nav-links">
           <button onClick={() => scrollToSection('hero')}>Home</button>
-          <button onClick={() => scrollToSection('gallery')}>Character Design</button>
+          <button onClick={() => scrollToSection('series')}>Series Project</button>
+          <button onClick={() => scrollToSection('company')}>Studio Work</button>
           <button onClick={() => scrollToSection('books')}>Books</button>
+          <button onClick={() => scrollToSection('gallery')}>Illustrations</button>
           <button onClick={() => scrollToSection('contact')}>Contact</button>
         </div>
         
@@ -72,8 +74,10 @@ export default function Navigation({ artistName, theme, onToggleTheme }: Navigat
       {isMobileMenuOpen && (
         <div className="mobile-menu">
           <button onClick={() => scrollToSection('hero')}>Home</button>
-          <button onClick={() => scrollToSection('gallery')}>Character Design</button>
+          <button onClick={() => scrollToSection('series')}>Series Project</button>
+          <button onClick={() => scrollToSection('company')}>Studio Work</button>
           <button onClick={() => scrollToSection('books')}>Books</button>
+          <button onClick={() => scrollToSection('gallery')}>Illustrations</button>
           <button onClick={() => scrollToSection('contact')}>Contact</button>
         </div>
       )}

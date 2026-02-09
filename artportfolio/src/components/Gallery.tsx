@@ -20,13 +20,13 @@ export default function Gallery({ artistName, artistEmail }: GalleryProps) {
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const galleryItems: GalleryItem[] = [
-    {
-      id: 1,
-      src: '/images/gallery/blindingLights.png',
-      title: 'Blinding Lights',
-      description: 'Illustration inspired by the song "Blinding Lights"',
-      tags: ['music', 'illustration', 'character']
-    },
+    // {
+    //   id: 1,
+    //   src: '/images/gallery/blindingLights.png',
+    //   title: 'Blinding Lights',
+    //   description: 'Illustration inspired by the song "Blinding Lights"',
+    //   tags: ['music', 'illustration', 'character']
+    // },
     {
       id: 2,
       src: '/images/gallery/babyJesusIllustration.png',
@@ -55,40 +55,40 @@ export default function Gallery({ artistName, artistEmail }: GalleryProps) {
       description: 'Michal, daughter of King Saul, expression sheet for character design. Will be used in an upcoming project',
       tags: ['biblical', 'expression', 'character']
     },
-    {
-      id: 6,
-      src: '/images/gallery/DAVID.png',
-      title: 'David Character Design',
-      description: 'Illustration of David, inspired by biblical descriptions',
-      tags: ['biblical', 'david', 'hero', 'character']
-    },
-    {
-      id: 7,
-      src: '/images/gallery/davidchibi.png',
-      title: 'Chibi David',
-      description: 'Chibi style illustration of David from the Bible',
-      tags: ['david', 'character', 'biblical']
-    },
-    {
-      id: 8,
-      src: '/images/gallery/coldoutside.png',
-      title: 'Winter\'s Air',
-      description: 'Children\'s book illustration that will be featured in a upcoming book',
-      tags: ['winter', 'children', 'illustration']
-    },
-    {
-      id: 9,
-      src: '/images/gallery/CosmicPulse.png',
-      title: 'Hero Design',
-      description: 'Superhero character design with cosmic powers, will be used in a future storyline',
-      tags: ['superhero', 'design', 'character']
-    },
+    // {
+    //   id: 6,
+    //   src: '/images/gallery/DAVID.png',
+    //   title: 'David Character Design',
+    //   description: 'Illustration of David, inspired by biblical descriptions',
+    //   tags: ['biblical', 'david', 'hero', 'character']
+    // },
+    // {
+    //   id: 7,
+    //   src: '/images/gallery/davidchibi.png',
+    //   title: 'Chibi David',
+    //   description: 'Chibi style illustration of David from the Bible',
+    //   tags: ['david', 'character', 'biblical']
+    // },
+    // {
+    //   id: 8,
+    //   src: '/images/gallery/coldoutside.png',
+    //   title: 'Winter\'s Air',
+    //   description: 'Children\'s book illustration that will be featured in a upcoming book',
+    //   tags: ['winter', 'children', 'illustration']
+    // },
+    // {
+    //   id: 9,
+    //   src: '/images/gallery/CosmicPulse.png',
+    //   title: 'Hero Design',
+    //   description: 'Superhero character design with cosmic powers, will be used in a future storyline',
+    //   tags: ['superhero', 'design', 'character']
+    // },
     {
       id: 10,
-      src: '/images/gallery/aeren.PNG',
-      title: 'Fantasy Character Design',
-      description: 'Merman inspired character illustration',
-      tags: ['fantasy', 'character', 'underwater']
+      src: '/images/gallery/mountaindude.png',
+      title: 'Skiing Illustration Design',
+      description: 'Skiing inspired character illustration',
+      tags: ['skiing', 'character', 'illustration']
     },
   ];
 
@@ -121,8 +121,8 @@ export default function Gallery({ artistName, artistEmail }: GalleryProps) {
   return (
     <section id="gallery" className="gallery-section">
       <div className="section-header">
-        <h2 className="section-title">Character Design & Illustrations</h2>
-        <p className="section-subtitle">Explore my character artwork and designs</p>
+        <h2 className="section-title">Illustrations & Other Pieces</h2>
+        <p className="section-subtitle">A curated mix of narrative, character, and exploratory work</p>
       </div>
 
       <div className="filter-buttons">
