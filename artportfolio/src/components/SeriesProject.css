@@ -176,22 +176,117 @@
 
 .series-image-frame {
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: auto;
   overflow: hidden;
-  background: rgba(10, 10, 20, 0.65);
-  padding: 0.75rem;
-}
-
-[data-theme='light'] .series-image-frame {
-  background: rgba(245, 245, 247, 0.9);
+  background: transparent;
+  padding: 0;
 }
 
 .series-image-frame img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
   display: block;
   transition: transform 0.4s ease;
+}
+
+.series-image-button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.series-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 7, 15, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 2200;
+  animation: fadeIn 0.3s ease;
+}
+
+.series-lightbox-content {
+  width: min(1100px, 100%);
+  background: rgba(26, 26, 46, 0.95);
+  border-radius: 18px;
+  padding: 2.5rem;
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme='light'] .series-lightbox-content {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.series-lightbox-content img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.series-lightbox-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.series-lightbox-info h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-family: 'Sora', sans-serif;
+  color: var(--text-primary);
+}
+
+.series-download-btn {
+  background: linear-gradient(135deg, #4A90E2, #9B6BE8);
+  color: white;
+  border: none;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.series-download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.35);
+}
+
+.series-lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.series-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
 }
 
 .series-image-card figcaption {

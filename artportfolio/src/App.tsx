@@ -25,7 +25,7 @@ function App() {
     <div className="app">
       <Navigation artistName={artistName} theme={theme} onToggleTheme={toggleTheme} />
       <Hero artistName={artistName} />
-      <SeriesProject />
+      <SeriesProject artistName={artistName} artistEmail={artistEmail} />
       <CompanySpot />
       <Books />
       <Gallery artistName={artistName} artistEmail={artistEmail} />

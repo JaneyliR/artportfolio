@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { addWatermarkToImage } from '../utils/watermark';
 import './SeriesProject.css';
 
 interface CharacterImage {
@@ -14,7 +15,14 @@ interface SupportingCharacter {
   src: string;
 }
 
-export default function SeriesProject() {
+interface SeriesProjectProps {
+  artistName: string;
+  artistEmail: string;
+}
+
+export default function SeriesProject({ artistName, artistEmail }: SeriesProjectProps) {
+  const [selectedImage, setSelectedImage] = useState<CharacterImage | null>(null);
+
   useEffect(() => {
     const elements = document.querySelectorAll('.reveal-on-scroll');
     if (!('IntersectionObserver' in window) || elements.length === 0) {
@@ -63,6 +71,26 @@ export default function SeriesProject() {
 
   const supportingCharacters: SupportingCharacter[] = [];
 
+  const handleDownload = async (image: CharacterImage) => {
+    try {
+      const watermarkedUrl = await addWatermarkToImage(
+        image.src,
+        artistName,
+        artistEmail
+      );
+
+      const link = document.createElement('a');
+      link.href = watermarkedUrl;
+      link.download = `${image.label.replace(/\s+/g, '_')}_${artistName.replace(/\s+/g, '_')}.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error downloading image:', error);
+      alert('Error downloading image. Please try again.');
+    }
+  };
+
   return (
     <section id="series" className="series-section">
       <div className="series-inner">
@@ -109,9 +137,15 @@ export default function SeriesProject() {
             <div className="series-grid main-character-grid">
               {mainCharacterImages.map((image) => (
                 <figure key={image.label} className="series-image-card main-character-card">
-                  <div className="series-image-frame">
-                    <img src={image.src} alt={image.alt} loading="lazy" />
-                  </div>
+                  <button
+                    type="button"
+                    className="series-image-button"
+                    onClick={() => setSelectedImage(image)}
+                  >
+                    <div className="series-image-frame">
+                      <img src={image.src} alt={image.alt} loading="lazy" />
+                    </div>
+                  </button>
                   <figcaption>{image.label}</figcaption>
                 </figure>
               ))}
@@ -143,6 +177,32 @@ export default function SeriesProject() {
           </p>
         </div>
       </div>
+
+      {selectedImage && (
+        <div className="series-lightbox" onClick={() => setSelectedImage(null)}>
+          <div className="series-lightbox-content" onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              className="series-lightbox-close"
+              onClick={() => setSelectedImage(null)}
+              aria-label="Close image preview"
+            >
+              ×
+            </button>
+            <img src={selectedImage.src} alt={selectedImage.alt} />
+            <div className="series-lightbox-info">
+              <h3>{selectedImage.label}</h3>
+              <button
+                type="button"
+                className="series-download-btn"
+                onClick={() => handleDownload(selectedImage)}
+              >
+                Download with Watermark
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
